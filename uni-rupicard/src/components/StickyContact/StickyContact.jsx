@@ -56,14 +56,21 @@ const StickyContact = () => {
         </div>
       </section>
       <section className="fixed bottom-0 w-screen bg-gray-200 py-5 z-10 sm:hidden">
-        <div className="mx-auto max-w-7xl px-12 flex justify-between">
+        <div
+          className="mx-auto max-w-7xl px-12 flex justify-between bg-yellow-500 px-3"
+          style={{ maxWidth: 450 }}>
           <button
             type="submit"
-            className="text-center text-sm leading-7 justify-between pt-2 ml-2 bg-yellow-500 rounded-xl z-10 py-2 px-4 disabled:opacity-80 disabled:cursor-not-allowed"
-            disabled=""
-            style={{ width: 500 }}>
+            className=" flex text-center text-sm leading-7 justify-between pt-2 ml-2  rounded-xl z-10 py-2 px-4 disabled:opacity-80 disabled:cursor-not-allowed"
+            disabled="">
             <span>Apply Now</span>
           </button>
+          <img
+            alt="down_arrow"
+            src="https://www.uni.cards/images/right_arrow.svg"
+            loading="lazy"
+            className="w-9 md:w-14 css-0 cursor-pointer"
+          />
         </div>
       </section>
     </>
