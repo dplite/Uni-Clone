@@ -17,7 +17,6 @@ function App() {
       <div className="bg image3">
         <Footer />
       </div>
-      <div className="bg image4"></div>
     </div>
   );
 }

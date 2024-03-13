@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.consent {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.consent label {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* WebKit browsers like Safari and Chrome */
+  margin: 0; /* Removes the inner spin button */
+}

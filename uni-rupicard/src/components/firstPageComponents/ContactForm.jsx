@@ -12,7 +12,7 @@ const ContactForm = () => {
               <div className="flex items-center">
                 <input
                   className="bg-black border-0 outline-none text-white p-1 placeholder-[#7E8587] w-44"
-                  type="tel"
+                  type="number"
                   placeholder="Enter Phone No"
                   value={tel}
                   onChange={(e) => setTel(e.target.value)}

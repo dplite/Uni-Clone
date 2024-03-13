@@ -1,10 +1,42 @@
-import React from "react";
+import { AuthContext, useAuthContext } from "./Context/Context";
 import ContactForm from "./firstPageComponents/ContactForm";
 import TopBar from "./firstPageComponents/TopBar";
+import React, { useRef, useState, useEffect, useContext } from "react";
 
 const FirstPage = () => {
+  const targetRef = useRef(null);
+  const { setIsFirstPageVisible } = useAuthContext();
+
+  useEffect(() => {
+    const options = {
+      root: null, // Use the viewport as the root
+      rootMargin: "0px", // No margin around the root
+      threshold: 0.5, // Trigger when 50% of the target is in the viewport
+    };
+
+    const handleIntersection = (entries) => {
+      console.log(entries, "et");
+      entries.forEach((entry) => {
+        setIsFirstPageVisible(entry.isIntersecting);
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    if (targetRef.current) {
+      observer.observe(targetRef.current);
+    }
+
+    // Cleanup the observer when the component is unmounted
+    return () => {
+      if (targetRef.current) {
+        observer.unobserve(targetRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div>
+    <div ref={targetRef}>
       <TopBar />
       <div className="relative h-[100vh] w-full flex items-center justify-center">
         <div className="flex flex-col md:flex-row-reverse mx-auto max-w-[1280px] w-full justify-center z-1 bg-transparent">
