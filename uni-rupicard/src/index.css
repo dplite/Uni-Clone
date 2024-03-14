@@ -9,7 +9,7 @@
   background-size: cover;
 }
 .image1 {
-  background-image: url("../assets/ocean-waves-ocean-waves-relaxing.gif");
+  background-image: url("../assets/newbg.gif");
 }
 .image2 {
   background-color: white;
@@ -50,24 +50,19 @@
 .bg-down {
   background: linear-gradient(140.86deg, #65ecd8 11.07%, #fdef78 80.28%);
 }
-#video-background {
+.background-video {
   position: fixed;
-  top: 0;
-  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.background-video video {
+  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1; /* Place the video behind other content */
-}
-
-#content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  z-index: 1; /* Place the content above the video */
 }
 
 /* body {
